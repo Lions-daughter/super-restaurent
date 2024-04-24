@@ -1,0 +1,2549 @@
+*{
+    margin: 0;
+}
+.ui-widget{
+  margin-left: 10%;
+}
+input{
+  width: 900px;
+}
+
+.banner{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: banner;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes banner{
+
+    0%{background-image: url(images/chinese1.jpg);}
+    30%{background-image: url(images/fast\ food.jpg);}
+60%{background-image: url(images/ice.jpg);}
+100%{background-image: url(images/drinks.jpeg);}
+
+}
+.ticker-container {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-weight: bolder;
+  }
+  
+  .ticker-text {
+    display: inline-block;
+    padding-right: 10%; /* Move the text off-screen initially */
+    animation: marquee 40s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .bg{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: bg;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes bg{
+    0%{background-image: url(images/desi2.jpg);}
+    50%{background-image: url(images/desi3.jpg);}
+    100%{background-image: url(images/desi\ collage.jpg);}
+
+}
+.special{
+    width: 100%;
+    height: 10vh;
+  
+    
+}
+
+
+
+@mixin transition($transition) {
+  -webkit-transition: all $transition ease-in-out;
+  -moz-transition: all $transition ease-in-out;
+  -o-transition: all $transition ease-in-out;
+  transition: all $transition ease-in-out;
+}
+
+
+main {
+overflow: hidden;
+margin: 0 150px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 2rem;
+text-align: center;
+
+
+@media screen and (max-width: 768px) {
+  grid-template-columns: 1fr;
+}
+
+section {
+  overflow: hidden;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transition(.5s);
+  overflow: hidden;
+}
+
+/* // ZOOM THE BACKGROUND USING TRANSFORM SCALE */
+.background--zoom {
+  &:hover {
+    transform: scale(1.5);
+
+    .caption {
+      transform: scale(.9);
+      color: #ffffff;
+    }
+  }
+}
+
+.background--1 {
+  background-image: url("images/steak\ bbq\ grill\ images.jpg");
+}
+
+.background--2 {
+  background-image: url("images/Niharii.jpg");
+}
+ .background--3{
+background-image: url("images/ma-chinese-food-1.jpg");
+  }
+  .background--4{
+    background-image: url(images/frozen-golden-gaytime-cheesecake-951597-1.jpg);
+  }
+  
+  .caption {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(#ffffff, .2);
+    transform: scale(.8);
+    @include transition(.6s);
+  }
+}
+
+
+.our{
+    font-size: larger;
+  margin-left: 40%;
+    font-size: 400%;
+}
+
+
+#food {
+  padding: 5rem 0 10rem 0;
+}
+#food h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
+}
+.food-container {
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img {
+  display: block;
+  width: 100%;
+  height: 150%;
+  margin: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+.img-container {
+  margin: 0 1rem;
+  position: relative;
+ 
+}
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+.img-content h3 {
+  color: #fff;
+  font-size: 2.2rem;
+}
+.img-content a {
+  font-size: 1.2rem;
+}
+.img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.871);
+  opacity: 0;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+.about{
+    font-size: larger;
+    margin-left: 37%;
+      font-size: 400%;  
+}
+
+.dish{
+  width: 100%;
+  height: 48vh;
+  display: flex;
+
+}
+.half{
+  width: 50%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+
+}
+.portion{
+  width: 48%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+  margin-left: 1%;
+}
+video{
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+}
+h3{
+  word-wrap: break-word;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bolder;
+  width: 1.5%;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  margin-top: 1%;
+ color: rgb(111, 111, 111);
+}
+.wel{
+  color: #ffffff;
+  margin-top: 5%;
+  margin-left: 2%;
+  color: gray;
+  font-weight: bolder;
+ border-bottom: 2px solid white;
+
+}
+.at{
+  color: white;
+  margin-left: 2%;
+}
+.button{
+margin-left: 10%;
+margin-top: 5%;
+background-color: none;
+border-color: gray;
+color: white;
+}
+.button:hover{
+  background-color: none;
+border-color: gray;
+color: white;
+}
+.footer{
+  background-color: #000000;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  margin-top: 5%;
+
+
+}
+h5{
+  margin-left: 80%;
+  margin-top: 10%;
+}
+h4{
+  margin-left: 45%;
+  margin-top: 25%;
+}
+.first{
+
+  width: 30%;
+  height: 40vh;
+ 
+}
+.first ul li{
+  list-style-type: none;
+  margin-left: 78.5%;
+  color: white;
+}
+.first a{
+  text-decoration: none;
+  color: white;
+}
+.second{
+
+  width: 10%;
+  height: 40vh;
+}
+.second ul li{
+  list-style-type: none;
+  margin-left: 35%;
+}
+.second a{
+  text-decoration: none;
+  color: white;
+}
+.third{
+  
+  width: 30%;
+  height: 40vh;
+}
+.third ul li{
+  list-style-type: none;
+ padding-right: 20%;
+ color: white;
+}
+.third a{
+  text-decoration: none;
+  color: white;
+}
+h6{
+  margin-top: 10%;
+  font-size: large;
+  margin-left: 5%;
+}
+.last{
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: 7vh;
+  display: flex;
+
+}
+.social{
+  width: 20%;
+ 
+
+  margin-left: 45%;
+}
+.bi{
+  font-size:200%;
+  color: rgb(0, 0, 0);
+ 
+ 
+}
+.bi:hover{
+  color: rgb(0, 0, 0);
+}
+.app{
+  width: 30%;
+  height: 50%;
+  margin-left: 30%;
+}
+.store{
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+ 
+}
+.para{
+  margin-left: 45%;
+}
+.pop{
+  width: 100%;
+  height: 10px;
+}
+.partners{
+  width: 100%;
+  background-color: black;
+  height: 50px;
+}
+.part{
+  margin-left: 45%;
+  color: white;
+}
+.company{
+  background-color: #000000;
+  height: 150px;
+}
+.pi{
+  width: 140px;
+  height:140px;
+  margin-left: 2%;
+}
+.rest{
+  background-image: url(images/ooo.jpg);
+  background-size: cover;
+  height: 400px;
+}
+.um a{
+  text-decoration: none;
+  color: white;
+}
+/* extra large */
+@media (max-width:1400px){
+  *{
+    margin: 0;
+}
+.ui-widget{
+  margin-left: 5%;
+}
+input{
+  width: 630px;
+}
+.banner{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: banner;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes banner{
+
+    0%{background-image: url(images/chinese1.jpg);}
+    30%{background-image: url(images/fast\ food.jpg);}
+60%{background-image: url(images/sweets.jpg);}
+100%{background-image: url(images/drinks.jpeg);}
+
+}
+.ticker-container {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-weight: bolder;
+  }
+  
+  .ticker-text {
+    display: inline-block;
+    padding-right: 10%; /* Move the text off-screen initially */
+    animation: marquee 40s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .bg{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: bg;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes bg{
+    0%{background-image: url(images/desi2.jpg);}
+    50%{background-image: url(images/desi3.jpg);}
+    100%{background-image: url(images/desi\ collage.jpg);}
+
+}
+.special{
+    width: 100%;
+    height: 10vh;
+  
+    
+}
+
+
+
+@mixin transition($transition) {
+  -webkit-transition: all $transition ease-in-out;
+  -moz-transition: all $transition ease-in-out;
+  -o-transition: all $transition ease-in-out;
+  transition: all $transition ease-in-out;
+}
+
+
+main {
+overflow: hidden;
+margin: 0 150px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 2rem;
+text-align: center;
+
+
+@media screen and (max-width: 768px) {
+  grid-template-columns: 1fr;
+}
+
+section {
+  overflow: hidden;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transition(.5s);
+  overflow: hidden;
+}
+
+/* // ZOOM THE BACKGROUND USING TRANSFORM SCALE */
+.background--zoom {
+  &:hover {
+    transform: scale(1.5);
+
+    .caption {
+      transform: scale(.9);
+      color: #ffffff;
+    }
+  }
+}
+
+.background--1 {
+  background-image: url("images/steak\ bbq\ grill\ images.jpg");
+}
+
+.background--2 {
+  background-image: url("images/Niharii.jpg");
+}
+ .background--3{
+background-image: url("images/ma-chinese-food-1.jpg");
+  }
+  .background--4{
+    background-image: url(images/frozen-golden-gaytime-cheesecake-951597-1.jpg);
+  }
+  
+  .caption {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(#ffffff, .2);
+    transform: scale(.8);
+    @include transition(.6s);
+  }
+}
+
+
+.our{
+    font-size: larger;
+  margin-left: 40%;
+    font-size: 400%;
+}
+
+
+#food {
+  padding: 5rem 0 10rem 0;
+}
+#food h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
+}
+.food-container {
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img {
+  display: block;
+  width: 100%;
+  height: 150%;
+  margin: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+.img-container {
+  margin: 0 1rem;
+  position: relative;
+ 
+}
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+.img-content h3 {
+  color: #fff;
+  font-size: 2.2rem;
+}
+.img-content a {
+  font-size: 1.2rem;
+}
+.img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.871);
+  opacity: 0;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+.about{
+    font-size: larger;
+    margin-left: 37%;
+      font-size: 400%;  
+}
+
+.dish{
+  width: 100%;
+  height: 48vh;
+  display: flex;
+
+}
+.half{
+  width: 50%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+
+}
+.portion{
+  width: 48%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+  margin-left: 1%;
+}
+video{
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+}
+h3{
+  word-wrap: break-word;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bolder;
+  width: 2%;
+
+  margin-top: 1%;
+ color: rgb(111, 111, 111);
+}
+.wel{
+  color: #ffffff;
+  margin-top: 5%;
+  margin-left: 2%;
+  color: gray;
+  font-weight: bolder;
+ border-bottom: 2px solid white;
+
+}
+.at{
+  color: white;
+  margin-left: 2%;
+  font-size: 14px;
+}
+.button{
+margin-left: 10%;
+margin-bottom: 5%;
+background-color: none;
+border-color: gray;
+color: white;
+}
+.button:hover{
+  background-color: none;
+border-color: gray;
+color: white;
+}
+.footer{
+  background-color: #000000;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  margin-top: 5%;
+
+
+}
+h5{
+  margin-left: 80%;
+  margin-top: 10%;
+}
+h4{
+  margin-left: 45%;
+  margin-top: 25%;
+}
+.first{
+
+  width: 30%;
+  height: 40vh;
+ 
+}
+.first ul li{
+  list-style-type: none;
+  margin-left: 78.5%;
+  color: white;
+}
+.first a{
+  text-decoration: none;
+  color: white;
+}
+.second{
+
+  width: 10%;
+  height: 40vh;
+}
+.second ul li{
+  list-style-type: none;
+  margin-left: 35%;
+}
+.second a{
+  text-decoration: none;
+  color: white;
+}
+.third{
+  
+  width: 30%;
+  height: 40vh;
+}
+.third ul li{
+  list-style-type: none;
+ padding-right: 20%;
+ color: white;
+}
+.third a{
+  text-decoration: none;
+  color: white;
+}
+h6{
+  margin-top: 10%;
+  font-size: large;
+  margin-left: 5%;
+}
+.last{
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: 7vh;
+  display: flex;
+
+}
+.social{
+  width: 20%;
+ 
+
+  margin-left: 45%;
+}
+.bi{
+  font-size:200%;
+  color: rgb(0, 0, 0);
+ 
+ 
+}
+.bi:hover{
+  color: rgb(0, 0, 0);
+}
+.app{
+  width: 30%;
+  height: 50%;
+  margin-left: 30%;
+}
+.store{
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+ 
+}
+.para{
+  margin-left: 45%;
+
+}
+.pop{
+  width: 100%;
+  height: 10px;
+}
+.partners{
+  width: 100%;
+  background-color: black;
+  height: 50px;
+}
+.part{
+  margin-left: 45%;
+  color: white;
+}
+.company{
+  background-color: #000000;
+  height: 150px;
+}
+.pi{
+  width: 105px;
+  height:130px;
+  
+}
+.rest{
+  background-image: url(images/ooo.jpg);
+  background-size: cover;
+  height: 400px;
+}
+.um a{
+  text-decoration: none;
+  color: white;
+} 
+  
+}
+@media (max-width:1200px){
+  *{
+    margin: 0;
+}
+.ui-widget{
+  margin-left: 7px;
+}
+input{
+  width: 500px;
+  margin-left: 10px;
+}
+.banner{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: banner;.
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes banner{
+
+    0%{background-image: url(images/chinese1.jpg);}
+    30%{background-image: url(images/fast\ food.jpg);}
+60%{background-image: url(images/sweets.jpg);}
+100%{background-image: url(images/drinks.jpeg);}
+
+}
+.ticker-container {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-weight: bolder;
+  }
+  
+  .ticker-text {
+    display: inline-block;
+    padding-right: 10%; /* Move the text off-screen initially */
+    animation: marquee 40s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .bg{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: bg;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes bg{
+    0%{background-image: url(images/desi2.jpg);}
+    50%{background-image: url(images/desi3.jpg);}
+    100%{background-image: url(images/desi\ collage.jpg);}
+
+}
+.special{
+    width: 100%;
+    height: 10vh;
+  
+    
+}
+
+
+
+@mixin transition($transition) {
+  -webkit-transition: all $transition ease-in-out;
+  -moz-transition: all $transition ease-in-out;
+  -o-transition: all $transition ease-in-out;
+  transition: all $transition ease-in-out;
+}
+
+
+main {
+overflow: hidden;
+margin: 0 150px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 2rem;
+text-align: center;
+
+
+@media screen and (max-width: 768px) {
+  grid-template-columns: 1fr;
+}
+
+section {
+  overflow: hidden;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transition(.5s);
+  overflow: hidden;
+}
+
+/* // ZOOM THE BACKGROUND USING TRANSFORM SCALE */
+.background--zoom {
+  &:hover {
+    transform: scale(1.5);
+
+    .caption {
+      transform: scale(.9);
+      color: #ffffff;
+    }
+  }
+}
+
+.background--1 {
+  background-image: url("images/steak\ bbq\ grill\ images.jpg");
+}
+
+.background--2 {
+  background-image: url("images/Niharii.jpg");
+}
+ .background--3{
+background-image: url("images/ma-chinese-food-1.jpg");
+  }
+  .background--4{
+    background-image: url(images/frozen-golden-gaytime-cheesecake-951597-1.jpg);
+  }
+  
+  .caption {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(#ffffff, .2);
+    transform: scale(.8);
+    @include transition(.6s);
+  }
+}
+
+
+.our{
+    font-size: larger;
+  margin-left: 40%;
+    font-size: 400%;
+}
+
+
+#food {
+  padding: 5rem 0 10rem 0;
+}
+#food h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
+}
+.food-container {
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img {
+  display: block;
+  width: 100%;
+  height: 150%;
+  margin: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+.img-container {
+  margin: 0 1rem;
+  position: relative;
+ 
+}
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+.img-content h3 {
+  color: #fff;
+  font-size: 2.2rem;
+}
+.img-content a {
+  font-size: 1.2rem;
+}
+.img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.871);
+  opacity: 0;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+.about{
+    font-size: larger;
+    margin-left: 37%;
+      font-size: 400%;  
+}
+
+.dish{
+  width: 100%;
+  height: 48vh;
+  display: flex;
+
+}
+.half{
+  width: 50%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+
+}
+.portion{
+  width: 48%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+  margin-left: 1%;
+}
+video{
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+}
+h3{
+  word-wrap: break-word;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bolder;
+  width: 1.5%;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  margin-top: 1%;
+ color: rgb(111, 111, 111);
+}
+.wel{
+  color: #ffffff;
+  margin-top: 3%;
+  color: gray;
+  font-weight: bolder;
+ border-bottom: 2px solid white;
+
+}
+.at{
+  color: white;
+  font-size: 13px;
+ 
+}
+.button{
+margin-left: 10%;
+margin-top: 5%;
+background-color: none;
+border-color: gray;
+color: white;
+}
+.button:hover{
+  background-color: none;
+border-color: gray;
+color: white;
+}
+.um a{
+  font-size:15px;
+text-decoration: none;
+color: white;
+}
+.footer{
+  background-color: #000000;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  margin-top: 5%;
+
+
+}
+h5{
+  margin-left: 80%;
+  margin-top: 10%;
+}
+h4{
+  margin-left: 45%;
+  margin-top: 25%;
+}
+.first{
+
+  width: 30%;
+  height: 40vh;
+ 
+}
+.first ul li{
+  list-style-type: none;
+  margin-left: 78.5%;
+  color: white;
+}
+.first a{
+  text-decoration: none;
+  color: white;
+}
+.second{
+
+  width: 10%;
+  height: 40vh;
+}
+.second ul li{
+  list-style-type: none;
+  margin-left: 35%;
+}
+.second a{
+  text-decoration: none;
+  color: white;
+}
+.third{
+  
+  width: 30%;
+  height: 40vh;
+}
+.third ul li{
+  list-style-type: none;
+ padding-right: 20%;
+ color: white;
+}
+.third a{
+  text-decoration: none;
+  color: white;
+}
+h6{
+  margin-top: 10%;
+  font-size: large;
+  margin-left: 5%;
+}
+.last{
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: 7vh;
+  display: flex;
+
+}
+.social{
+  width: 20%;
+ 
+
+  margin-left: 45%;
+}
+.bi{
+  font-size:200%;
+  color: rgb(0, 0, 0);
+ 
+ 
+}
+.bi:hover{
+  color: rgb(0, 0, 0);
+}
+.app{
+  width: 30%;
+  height: 50%;
+  margin-left: 30%;
+}
+.store{
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+ 
+}
+.para{
+  margin-left: 45%;
+}
+.pop{
+  width: 100%;
+  height: 10px;
+}
+.partners{
+  width: 100%;
+  background-color: black;
+  height: 50px;
+}
+.part{
+  margin-left: 45%;
+  color: white;
+}
+.company{
+  background-color: #000000;
+  height: 150px;
+}
+.pi{
+  width: 100px;
+  height:100px;
+  margin-left: 1.1%;
+}
+.rest{
+  background-image: url(images/ooo.jpg);
+  background-size: cover;
+  height: 400px;
+}
+}
+@media (max-width:991px){
+  *{
+    margin: 0;
+}
+.ui-widget{
+  margin-left: 10%;
+}
+input{
+  width: 500px;
+}
+.banner{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: banner;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes banner{
+
+    0%{background-image: url(images/chinese1.jpg);}
+    30%{background-image: url(images/fast\ food.jpg);}
+60%{background-image: url(images/sweets.jpg);}
+100%{background-image: url(images/drinks.jpeg);}
+
+}
+.ticker-container {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-weight: bolder;
+  }
+  
+  .ticker-text {
+    display: inline-block;
+    padding-right: 10%; /* Move the text off-screen initially */
+    animation: marquee 40s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .bg{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: bg;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes bg{
+    0%{background-image: url(images/desi2.jpg);}
+    50%{background-image: url(images/desi3.jpg);}
+    100%{background-image: url(images/desi\ collage.jpg);}
+
+}
+.special{
+    width: 100%;
+    height: 10vh;
+  
+    
+}
+
+
+
+@mixin transition($transition) {
+  -webkit-transition: all $transition ease-in-out;
+  -moz-transition: all $transition ease-in-out;
+  -o-transition: all $transition ease-in-out;
+  transition: all $transition ease-in-out;
+}
+
+
+main {
+overflow: hidden;
+margin: 0 150px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 2rem;
+text-align: center;
+
+
+@media screen and (max-width: 768px) {
+  grid-template-columns: 1fr;
+}
+
+section {
+  overflow: hidden;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transition(.5s);
+  overflow: hidden;
+}
+
+/* // ZOOM THE BACKGROUND USING TRANSFORM SCALE */
+.background--zoom {
+  &:hover {
+    transform: scale(1.5);
+
+    .caption {
+      transform: scale(.9);
+      color: #ffffff;
+    }
+  }
+}
+
+.background--1 {
+  background-image: url("images/steak\ bbq\ grill\ images.jpg");
+}
+
+.background--2 {
+  background-image: url("images/Niharii.jpg");
+}
+ .background--3{
+background-image: url("images/ma-chinese-food-1.jpg");
+  }
+  .background--4{
+    background-image: url(images/frozen-golden-gaytime-cheesecake-951597-1.jpg);
+  }
+  
+  .caption {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(#ffffff, .2);
+    transform: scale(.8);
+    @include transition(.6s);
+  }
+}
+
+
+.our{
+    font-size: 50px;
+  margin-left: 40%;
+  font-weight: bolder;
+  
+}
+
+
+#food {
+  padding: 5rem 0 10rem 0;
+}
+#food h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
+}
+.food-container {
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img {
+  display: block;
+  width: 100%;
+  height: 150%;
+  margin: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+.img-container {
+  margin: 0 1rem;
+  position: relative;
+ 
+}
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+.img-content h3 {
+  color: #fff;
+  font-size: 2.2rem;
+}
+.img-content a {
+  font-size: 1.2rem;
+}
+.img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.871);
+  opacity: 0;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+.about{
+    font-size: 50px;
+    margin-left: 37%;
+    font-weight: bolder;
+     
+}
+
+.dish{
+  width: 100%;
+  height: 48vh;
+  display: flex;
+
+}
+.half{
+  width: 50%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+
+}
+.portion{
+  width: 48%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+  margin-left: 1%;
+}
+video{
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+}
+h3{
+  word-wrap: break-word;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bolder;
+  width: 2.1%;
+
+  padding-right: 0.8%;
+  margin-top: 1%;
+ color: rgb(111, 111, 111);
+}
+.wel{
+  color: #ffffff;
+  margin-top: 5%;
+  margin-left: 2%;
+  color: gray;
+  font-weight: bolder;
+ border-bottom: 2px solid white;
+
+}
+.at{
+  color: white;
+  margin-left: 2%;
+  font-size: 11px;
+}
+.button{
+margin-left: 10%;
+margin-top: 5%;
+background-color: none;
+border-color: gray;
+color: white;
+height: 23px;
+font-size: 13px;
+padding: 5px;
+}
+.button:hover{
+  background-color: none;
+border-color: gray;
+color: white;
+}
+.footer{
+  background-color: #000000;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  margin-top: 5%;
+
+
+}
+h5{
+  margin-left: 80%;
+  margin-top: 10%;
+}
+h4{
+  margin-left:60%;
+  margin-top: 25%;
+}
+.first{
+
+  width: 30%;
+  height: 40vh;
+ 
+}
+.first ul li{
+  list-style-type: none;
+  margin-left: 78.5%;
+  color: white;
+}
+.first a{
+  text-decoration: none;
+  color: white;
+}
+.second{
+
+  width: 10%;
+  height: 40vh;
+}
+.second ul li{
+  list-style-type: none;
+  margin-left: 35%;
+}
+.second a{
+  text-decoration: none;
+  color: white;
+}
+.third{
+  
+  width: 30%;
+  height: 40vh;
+}
+.third ul li{
+  list-style-type: none;
+ padding-right: 20%;
+ color: white;
+}
+.third a{
+  text-decoration: none;
+  color: white;
+}
+h6{
+  margin-top: 10%;
+  font-size: large;
+  margin-left: 10%;
+}
+.last{
+  width: 100%;
+ 
+  height: 7vh;
+  display: flex;
+
+}
+.social{
+  width: 20%;
+ 
+  margin-left: 40%;
+}
+.bi{
+  font-size:180%;
+  color: rgb(0, 0, 0);
+ 
+ 
+}
+.bi:hover{
+  color: rgb(0, 0, 0);
+}
+.app{
+  width: 30%;
+  height: 50%;
+  margin-left: 30%;
+}
+.store{
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+ 
+}
+.para{
+  margin-left: 40%;
+  font-weight: bolder;
+}
+.pop{
+  width: 100%;
+  height: 10px;
+}
+.partners{
+  width: 100%;
+  background-color: black;
+  height: 50px;
+}
+.part{
+  margin-left: 45%;
+  color: white;
+}
+.company{
+  background-color: #000000;
+  height: 150px;
+}
+.pi{
+  width: 87px;
+  height:87px;
+  margin-left: 0.5%;
+  margin-top: 10px;
+}
+.rest{
+  background-image: url(images/ooo.jpg);
+  background-size: cover;
+  height: 400px;
+}
+.um a{
+  text-decoration: none;
+  color: white;
+}
+
+}
+/* screen medium */
+@media  (max-width:768px){
+  *{
+    margin: 0;
+}
+.ui-widget{
+  margin-left: 15px;
+}
+input{
+  width: 400px;
+}
+.banner{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: banner;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes banner{
+
+    0%{background-image: url(images/chinese1.jpg);}
+    30%{background-image: url(images/fast\ food.jpg);}
+60%{background-image: url(images/sweets.jpg);}
+100%{background-image: url(images/drinks.jpeg);}
+
+}
+.ticker-container {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-weight: bolder;
+  }
+  
+  .ticker-text {
+    display: inline-block;
+    padding-right: 10%; /* Move the text off-screen initially */
+    animation: marquee 40s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .bg{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: bg;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes bg{
+    0%{background-image: url(images/desi2.jpg);}
+    50%{background-image: url(images/desi3.jpg);}
+    100%{background-image: url(images/desi\ collage.jpg);}
+
+}
+.special{
+    width: 100%;
+    height: 10vh;
+  
+    
+}
+
+
+
+@mixin transition($transition) {
+  -webkit-transition: all $transition ease-in-out;
+  -moz-transition: all $transition ease-in-out;
+  -o-transition: all $transition ease-in-out;
+  transition: all $transition ease-in-out;
+}
+
+
+main {
+overflow: hidden;
+margin: 0 150px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 2rem;
+text-align: center;
+
+
+@media screen and (max-width: 768px) {
+  grid-template-columns: 1fr;
+}
+
+section {
+  overflow: hidden;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transition(.5s);
+  overflow: hidden;
+}
+
+/* // ZOOM THE BACKGROUND USING TRANSFORM SCALE */
+.background--zoom {
+  &:hover {
+    transform: scale(1.5);
+
+    .caption {
+      transform: scale(.9);
+      color: #ffffff;
+    }
+  }
+}
+
+.background--1 {
+  background-image: url("images/steak\ bbq\ grill\ images.jpg");
+}
+
+.background--2 {
+  background-image: url("images/Niharii.jpg");
+}
+ .background--3{
+background-image: url("images/ma-chinese-food-1.jpg");
+  }
+  .background--4{
+    background-image: url(images/frozen-golden-gaytime-cheesecake-951597-1.jpg);
+  }
+  
+  .caption {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(#ffffff, .2);
+    transform: scale(.8);
+    @include transition(.6s);
+  }
+}
+
+
+.our{
+  font-size: 40px;
+  margin-left: 40%;
+  
+}
+
+
+#food {
+  padding: 5rem 0 10rem 0;
+}
+#food h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
+}
+.food-container {
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img {
+  display: block;
+  width: 100%;
+  height: 150%;
+  margin: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+.img-container {
+  margin: 0 1rem;
+  position: relative;
+ 
+}
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+.img-content h3 {
+  color: #fff;
+  font-size: 2.2rem;
+}
+.img-content a {
+  font-size: 1.2rem;
+}
+.img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.871);
+  opacity: 0;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+.about{
+    font-size: 40px;
+    margin-left: 39%;
+    font-weight: bolder;
+    
+}
+
+.dish{
+  width: 100%;
+  height: 48vh;
+  display: flex;
+
+}
+.half{
+  width: 50%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+
+}
+.portion{
+  width: 48%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+  margin-left: 1%;
+}
+video{
+  width: 90%;
+  height: 100%;
+  margin-left: 10%;
+}
+h3{
+  word-wrap: break-word;
+  text-transform: uppercase;
+  font-size:40px;
+  font-weight: bolder;
+  width: 3%;
+ 
+  margin-top: 1%;
+ color: rgb(111, 111, 111);
+}
+.wel{
+  color: #ffffff;
+  margin-top: 5%;
+  margin-left: 2%;
+  color: gray;
+  font-weight: bolder;
+ border-bottom: 2px solid white;
+
+}
+.at{
+  color: white;
+  margin-left: 2%;
+  font-size: 10px;
+}
+.button{
+margin-left: 10%;
+margin-top: 5%;
+background-color: none;
+border-color: gray;
+color: white;
+}
+.button:hover{
+  background-color: none;
+border-color: gray;
+color: white;
+}
+.footer{
+  background-color: #000000;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  margin-top: 5%;
+
+
+}
+h5{
+  margin-left: 80%;
+  margin-top: 10%;
+}
+h4{
+  margin-left: 45%;
+  margin-top: 25%;
+}
+.first{
+
+  width: 30%;
+  height: 40vh;
+ 
+}
+.first ul li{
+  list-style-type: none;
+  margin-left: 78.5%;
+  color: white;
+}
+.first a{
+  text-decoration: none;
+  color: white;
+}
+.second{
+
+  width: 10%;
+  height: 40vh;
+}
+.second ul li{
+  list-style-type: none;
+  margin-left: 35%;
+}
+.second a{
+  text-decoration: none;
+  color: white;
+}
+.third{
+  
+  width: 30%;
+  height: 40vh;
+}
+.third ul li{
+  list-style-type: none;
+ padding-right: 20%;
+ color: white;
+}
+.third a{
+  text-decoration: none;
+  color: white;
+}
+h6{
+  margin-top: 10%;
+  font-size: large;
+  margin-left: 5%;
+}
+.last{
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: 7vh;
+  display: flex;
+
+}
+.social{
+  width: 20%;
+ 
+
+  margin-left: 45%;
+}
+.bi{
+  font-size:132%;
+  color: rgb(0, 0, 0);
+ 
+ 
+}
+.bi:hover{
+  color: rgb(0, 0, 0);
+}
+.app{
+  width: 30%;
+  height: 50%;
+  margin-left: 30%;
+}
+.store{
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+ 
+}
+.para{
+  margin-left: 45%;
+  font-size: 15px;
+}
+.pop{
+  width: 100%;
+  height: 10px;
+}
+.partners{
+  width: 100%;
+  background-color: black;
+  height: 50px;
+}
+.part{
+  margin-left: 45%;
+  color: white;
+}
+.company{
+  background-color: #000000;
+  height: 150px;
+}
+.pi{
+  width: 65px;
+  height:120px;
+ 
+}
+.rest{
+  background-image: url(images/ooo.jpg);
+  background-size: cover;
+  height: 400px;
+}
+.um a{
+  text-decoration: none;
+  color: white;
+}
+}
+/* small screen */
+@media (max-width:576px){
+  *{
+    margin: 0;
+}
+.ui-widget{
+  margin-left: 5%;
+}
+input{
+  width: 250px;
+}
+.banner{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: banner;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes banner{
+
+    0%{background-image: url(images/chinese1.jpg);}
+    30%{background-image: url(images/fast\ food.jpg);}
+60%{background-image: url(images/sweets.jpg);}
+100%{background-image: url(images/drinks.jpeg);}
+
+}
+.ticker-container {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-weight: bolder;
+  }
+  
+  .ticker-text {
+    display: inline-block;
+    padding-right: 10%; /* Move the text off-screen initially */
+    animation: marquee 40s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .bg{
+    width: 100%;
+    background-size: cover;
+    height: 45vh;
+    animation-name: bg;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes bg{
+    0%{background-image: url(images/desi2.jpg);}
+    50%{background-image: url(images/desi3.jpg);}
+    100%{background-image: url(images/desi\ collage.jpg);}
+
+}
+.special{
+    width: 100%;
+    height: 10vh;
+  
+    
+}
+
+
+
+@mixin transition($transition) {
+  -webkit-transition: all $transition ease-in-out;
+  -moz-transition: all $transition ease-in-out;
+  -o-transition: all $transition ease-in-out;
+  transition: all $transition ease-in-out;
+}
+
+
+main {
+overflow: hidden;
+margin: 0 150px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 2rem;
+text-align: center;
+
+
+@media screen and (max-width: 768px) {
+  grid-template-columns: 1fr;
+}
+
+section {
+  overflow: hidden;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transition(.5s);
+  overflow: hidden;
+}
+
+/* // ZOOM THE BACKGROUND USING TRANSFORM SCALE */
+.background--zoom {
+  &:hover {
+    transform: scale(1.5);
+
+    .caption {
+      transform: scale(.9);
+      color: #ffffff;
+    }
+  }
+}
+
+.background--1 {
+  background-image: url("images/steak\ bbq\ grill\ images.jpg");
+}
+
+.background--2 {
+  background-image: url("images/Niharii.jpg");
+}
+ .background--3{
+background-image: url("images/ma-chinese-food-1.jpg");
+  }
+  .background--4{
+    background-image: url(images/frozen-golden-gaytime-cheesecake-951597-1.jpg);
+  }
+  
+  .caption {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(#ffffff, .2);
+    transform: scale(.8);
+    @include transition(.6s);
+  }
+}
+
+
+.our{
+ font-size: 40px;
+  margin-left: 38%;
+
+}
+
+
+#food {
+  padding: 5rem 0 10rem 0;
+}
+#food h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #555;
+}
+.food-container {
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img {
+  display: block;
+  width: 100%;
+  height: 150%;
+  margin: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+.img-container {
+  margin: 0 1rem;
+  position: relative;
+ 
+}
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+.img-content h3 {
+  color: #fff;
+  font-size: 2.2rem;
+}
+.img-content a {
+  font-size: 1.2rem;
+}
+.img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.871);
+  opacity: 0;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+.about{
+    font-size:40px;
+    margin-left: 37%;
+   
+}
+
+.dish{
+  width: 100%;
+  height: 48vh;
+  display: flex;
+
+}
+.half{
+  width: 50%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+
+}
+.portion{
+  width: 48%;
+  height: 45vh;
+  background-color: rgb(0, 0, 0);
+  margin-top: 1%;
+  margin-left: 1%;
+}
+video{
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+}
+h3{
+  word-wrap: break-word;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bolder;
+  width: 4.5%;
+
+  margin-top: 1%;
+ color: rgb(111, 111, 111);
+}
+.wel{
+  color: #ffffff;
+  margin-top: 5%;
+  margin-left: 2%;
+  color: gray;
+  font-weight: bolder;
+ border-bottom: 2px solid white;
+
+}
+.at{
+  color: white;
+  margin-left: 2%;
+  font-size: 9px;
+}
+.button{
+margin-left: 10%;
+margin-top: 5%;
+background-color: none;
+border-color: gray;
+color: white;
+}
+.button:hover{
+  background-color: none;
+border-color: gray;
+color: white;
+}
+.footer{
+  background-color: #000000;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  margin-top: 5%;
+
+
+}
+h5{
+  margin-left: 80%;
+  margin-top: 10%;
+}
+h4{
+  margin-left: 45%;
+  margin-top: 25%;
+}
+.first{
+
+  width: 30%;
+  height: 40vh;
+ 
+}
+.first ul li{
+  list-style-type: none;
+  margin-left: 78.5%;
+  color: white;
+}
+.first a{
+  text-decoration: none;
+  color: white;
+}
+.second{
+
+  width: 10%;
+  height: 40vh;
+}
+.second ul li{
+  list-style-type: none;
+  margin-left: 35%;
+}
+.second a{
+  text-decoration: none;
+  color: white;
+}
+.third{
+  
+  width: 30%;
+  height: 40vh;
+}
+.third ul li{
+  list-style-type: none;
+ padding-right: 20%;
+ color: white;
+}
+.third a{
+  text-decoration: none;
+  color: white;
+}
+h6{
+  margin-top: 10%;
+  font-size: large;
+  margin-left: 5%;
+}
+.last{
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: 7vh;
+  display: flex;
+
+}
+.social{
+  width: 20%;
+ 
+
+  margin-left: 45%;
+}
+.bi{
+  font-size:85%;
+  color: rgb(0, 0, 0);
+ 
+ 
+}
+.bi:hover{
+  color: rgb(0, 0, 0);
+}
+.app{
+  width: 30%;
+  height: 50%;
+  margin-left: 30%;
+}
+.store{
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+ 
+}
+.para{
+  margin-left: 45%;
+}
+.pop{
+  width: 100%;
+  height: 10px;
+}
+.partners{
+  width: 100%;
+  background-color: black;
+  height: 50px;
+}
+.part{
+  margin-left: 40%;
+  color: white;
+}
+.company{
+  background-color: #000000;
+  height: 150px;
+}
+.pi{
+  width: 47px;
+  height:130px;
+ 
+}
+.rest{
+  background-image: url(images/ooo.jpg);
+  background-size: cover;
+  height: 400px;
+}
+.um a{
+  text-decoration: none;
+  color: white;
+}
+
+}

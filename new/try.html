@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="java.js"></script>
+    <script src="js/jquery-3.7.1 (1).js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid">
+            <div class="pic">
+                <img src="images/r2.jpg" >
+       </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="ui-widget main" >
+            <label for="search">search: </label>
+            <input id="search" class="se">
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav ms-auto   mb-lg-0" >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">MENU</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="online.html">ONLINE ORDER</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               drop down
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+      <div class="cart">
+      <div class="ticker-container">
+        <h1 class="ticker-text"><i class="bi bi-emoji-smile"></i>DELIVERY ON YOUR DOORSTEP<i class="bi bi-house-check" ></i></h1>
+        <h1  class="ticker-text"><i class="bi bi-emoji-smile"></i>DELIVERY ON YOUR DOORSTEP<i class="bi bi-house-check" ></i></h1>
+      </div>
+      <div class="container-fluid spoon">
+      </div>
+   
+
+<div class="container">
+    <h2 class="text-center my-4">User Cart</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody id="cart-body">
+                <!-- Cart items will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Cart Summary</h5>
+                    <p>Total Items: <span id="total-items">0</span></p>
+                    <p>Total Price: <span id="total-price">RS:0.00</span></p>
+                    <button class="btn btn-primary btn-block" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="product">Product:</label>
+                <input type="text" class="form-control" id="product" placeholder="Enter product name">
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" class="form-control" id="quantity" placeholder="Enter quantity">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" id="price" placeholder="Enter price">
+            </div>
+            <button class="btn btn-success" onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    var cart = [];
+
+    function addToCart() {
+        var product = document.getElementById('product').value;
+        var quantity = parseInt(document.getElementById('quantity').value, 10);
+        var price = parseFloat(document.getElementById('price').value);
+
+        if (product && !isNaN(quantity) && !isNaN(price)) {
+            var total = quantity * price;
+            cart.push({ product: product, quantity: quantity, price: price, total: total });
+            updateCart();
+            clearInputFields();
+        } else {
+            alert('Please enter valid product details.');
+        }
+    }
+
+    function updateCart() {
+        var cartBody = document.getElementById('cart-body');
+        cartBody.innerHTML = '';
+
+        var totalItems = 0;
+        var totalPrice = 0;
+
+        cart.forEach(function (item) {
+            var row = '<tr>' +
+                '<td>' + item.product + '</td>' +
+                '<td>' + item.quantity + '</td>' +
+                '<td>$' + item.price.toFixed(2) + '</td>' +
+                '<td>$' + item.total.toFixed(2) + '</td>' +
+                '<td><button class="btn btn-danger btn-sm" onclick="removeFromCart(' + cart.indexOf(item) + ')">Remove</button></td>' +
+                '</tr>';
+            cartBody.innerHTML += row;
+
+            totalItems += item.quantity;
+            totalPrice += item.total;
+        });
+
+        document.getElementById('total-items').innerText = totalItems;
+        document.getElementById('total-price').innerText = 'RS' + totalPrice.toFixed(2);
+    }
+
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    function clearInputFields() {
+        document.getElementById('product').value = '';
+        document.getElementById('quantity').value = '';
+        document.getElementById('price').value = '';
+    }
+
+    function checkout() {
+        // Implement your checkout logic here
+        alert('Checkout functionality will be implemented here.');
+    }
+</script>
+
+</body>
+</html>
+
